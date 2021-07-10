@@ -22,31 +22,3 @@ class Venta(models.Model):
     def __str__(self):
         return self.nroVenta
 
-# Modelo para Clientes
-class Cliente(models.Model):
-    nroRutCli = models.IntegerField(primary_key=True, verbose_name="Número Rut del cliente")
-    dvRun = models.CharField(max_length=1, verbose_name="Dígito Verificador", help_text="Introduzca el dígito verificador de su rut")
-    nombreCli = models.CharField(max_length=70, verbose_name="Nombre Cliente", help_text="Introduzca su nombre completo")
-    apellidocli = models.CharField(max_length=80, verbose_name="Apellido Cliente", help_text="Introduzca su(s) apellido(s)")
-
-    def __str__(self):
-        return self.nroRutCli
-
-# Modelo para Usuarios (Clientes Registrados)
-class Usuario(models.Model):
-    idUser = models.AutoField(primary_key=True, verbose_name="Identificador del Usuario")
-    nombreUser = models.CharField(unique=True, max_length=30, verbose_name="Nombre de usuario", help_text="Introduzca el nombre de usuario")
-    passwordUser = models.CharField(max_length=10, verbose_name="Contraseña", help_text="Introduzca la contraseña")
-    nroRutCli = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name="Número Rut sin dígito verificador")
-
-    def __str__(self):
-        return self.nombreUser
-
-# Modelo para Usuarios Suscritos / Usuarios que hayan donado 
-class Suscrito(models.Model):
-    idSuscripcion = models.AutoField(primary_key=True, verbose_name="Identificador de la Suscripción")
-    nombreUser = models.CharField(unique=True, max_length=30, verbose_name="Nombre de usuario", help_text="Introduzca el nombre de usuario")
-    fechaSuscripcion = models.DateTimeField(auto_now_add=True, verbose_name="Fecha en la que el usuario se suscribió")
-
-    def __str__(self):
-        return self.idSuscripcion
