@@ -15,7 +15,7 @@ class Producto(models.Model):
 # Modelo para las Ventas
 class Venta(models.Model):
     nroVenta = models.IntegerField(primary_key=True, verbose_name="Identificador de la Venta")
-    idProducto = models.ForeignKey(Producto, on_delete=models.SET('ProductoEliminado'), help_text="Selecciona Producto")
+    idProducto = models.ForeignKey(Producto, on_delete=models.SET('ProductoEliminado'), help_text="Seleccionar Producto")
     cantidad = models.CharField(max_length=20, null=True, blank=True, verbose_name="Modelo", help_text="Introduzca el modelo")
     montoVenta = models.IntegerField(verbose_name="Monto Total a pagar")
 
