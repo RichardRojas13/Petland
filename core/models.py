@@ -11,4 +11,3 @@ class Categoria(models.Model):
 
     def _str_(self):
         return self.nombreCategoria
-
