@@ -6,19 +6,20 @@ from django.db import models
 #Productos
 class Producto(models.Model):
     idProducto = models.IntegerField(primary_key=True, verbose_name="Identificador del Producto")
-    nombreProducto = models.CharField(max_length=70, verbose_name="Nombre Producto", help_text="Introduzca su nombre")
-    cantStock = models.IntegerField(verbose_name="Stock disponible", help_text="Introduzca cantidad de Stock disponible")
+    nombreProducto = models.CharField(max_length=70, verbose_name="Nombre Producto")
+    descProducto = models.CharField(max_length=70, verbose_name="Descripción Producto")
+    cantStock = models.CharField(max_length=50,verbose_name="Stock disponible")
 
     def __str__(self):
         return self.nombreProducto
 
 # Modelo para las Ventas
 class Venta(models.Model):
-    nroVenta = models.IntegerField(primary_key=True, verbose_name="Identificador de la Venta")
-    idProducto = models.ForeignKey(Producto, on_delete=models.SET('ProductoEliminado'), help_text="Seleccionar Producto")
-    cantidad = models.CharField(max_length=20, null=True, blank=True, verbose_name="Modelo", help_text="Introduzca el modelo")
-    montoVenta = models.IntegerField(verbose_name="Monto Total a pagar")
+    idVenta  = models.IntegerField(primary_key=True, verbose_name="Identificador de la Venta")
+    nroVenta = models.CharField(max_length=20, verbose_name="Número de Venta")
+    cantidad = models.CharField(max_length=20, verbose_name="Cantidad")
+    montoVenta = models.CharField(max_length=50,verbose_name="Monto Total a Pagar")
+    idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nroVenta
-
