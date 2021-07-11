@@ -127,7 +127,7 @@ a.nav-link.text-uppercase.font-weight-bold:hover {
 }
 
 /* Sección: Welcome */
-#welcome {
+#Holaa {
     padding: 6% 10%;
     font-size: 32px;
     line-height: 1.5;
@@ -139,7 +139,7 @@ a.nav-link.text-uppercase.font-weight-bold:hover {
     font-weight: 550;
 }
 
-#welcome.main-bunner .main-bunner-inner {
+#Holaa.main-bunner .main-bunner-inner {
     position: relative;
     flex: 1;
     z-index: 1;
