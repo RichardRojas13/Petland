@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>PetLand</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+        {% load static %}
+        <!-- Call CSS -->
+        <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+        <!-- Call JS -->
+        <script src = {% static "core/js/bootstrap.min.js" %}> </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <script>
+        $(function () {
+            $(window).on('scroll', function () {
+                if ( $(window).scrollTop() > 10 ) {
+                    $('.navbar').addClass('active');
+                } else {
+                    $('.navbar').removeClass('active');
+                }
+            });
+        });
+    </script>
+    <body>
+        <!-- Barra menu -->
+        <div class="back-menu"  >
+            <header class="header">
+                <nav class="navbar navbar-expand-lg fixed-top py-0">
+                    <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">PetLand</a>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active" style="margin-left: 150px"><a href="{% url 'index.html' %}" class="nav-link text-uppercase font-weight-bold">Inicio</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Nosotros</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Productos</a></li>    
+                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Galería</a></li>
+                                <li class="nav-item"><a href="" class="nav-link text-uppercase font-weight-bold btn btn-info" type="button" id="suscripcion">Suscribirme</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- Bienvenidos -->
+            <div class="main-bunner" id="welcome">
+                <div class="main-bunner-inner">
+                    <div class="row row-50 justify-content-lg-center align-items-lg-center">
+                        <div class="col-lg-12">
+                            <div class="bunner-content-modern text-center">
+                                <h1 class="text-uppercase" id="welcome">Holaa...</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-contenido">
+            <div class="opciones">
+                <section>
+                    <div class="container">
+                        <div id="elementor-opciones">
+                            <div class="row">
+                                <!-- Perros -->
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div id="info-perros">
+                                        <div class="container-fluid">
+                                            <div class="box-icon">
+                                                <img src="https://www.bing.com/images/blob?bcid=Tu3kJTmcyfYCng" height="110px" alt="Perros">
+                                            </div>
+                                            <div>
+                                                <h3 class="box-title">
+                                                    <a href="#">PERROS</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Gatos -->
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div id="info-gatos">
+                                        <div class="container-fluid">
+                                            <div class="box-icon">
+                                                <img src="https://i.pinimg.com/236x/c7/73/f2/c773f227d686e91701c384b60bdc42f7.jpg" height="110px" alt="Gatos">
+                                            </div>
+                                            <div>
+                                                <h3 class="box-title">
+                                                    <a href="#">GATOS</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Animalitos -->
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div id="info-peque">
+                                        <div class="container-fluid">
+                                            <div class="box-icon">
+                                                <img src="https://th.bing.com/th/id/OIP.950a4UX7YJl_FOi01nMC4QAAAA?pid=ImgDet&rs=1" height="110px" alt="Gatos">
+                                            </div>
+                                            <div>
+                                                <h3 class="box-title">
+                                                    <a href="#">ANIMALES PEQUEÑOS</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="back-contenido2">
+            <div class="">
+                <section>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="container-fluid serv-extras">
+                                <h2>Nuestros Servicios</h2>
+                                <p>Nuestra Pagina Web cuenta con un servicio simple y comodo para que pueda ser ocupado por todas las edades</p>
+                                <!-- Servicio -->
+                                <a href="#"><button type="button" class="btn btn">Entérate más aquí</button></a>
+                            </div>
+                        </div>
+                        <!-- Contact-->
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="container-fluid contacto">
+                                <h2>Contáctanos</h2>
+                                <!-- Formulario Contacto -->
+                                <form class="form-horizontal" id="contacto" name="contacto" action="" method="post">
+                                    <div class="row" id="campos">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <label for="name" class="control-label col-xs-2">Su Nombre completo</label>
+                                            <input id="name" name="name" type="text" placeholder="Nombre(s) y Apellidos" class="form-control" minlength="7" required>
+                                        </div>
+                                        <br><br><br>
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <label for="email" class="control-label col-xs-2">Correo electronico</label>
+                                            <input id="email" name="email" type="email" placeholder="Email" class="form-control" required>
+                                        </div>
+                                        <br><br><br>
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <label for="phone" class="control-label col-xs-2">Teléfono</label>
+                                            <input id="phone" name="phone" type="number" placeholder="987 654 321" class="form-control" minlength="9">
+                                        </div>
+                                        <br><br><br>
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <label for="message" class="control-label col-xs-2">Asunto</label>
+                                            <textarea class="form-control" id="message" name="message" placeholder="Introduzca su mensaje para nosotros aquí." rows="5" required></textarea>
+                                        </div>
+                                        <br><br>
+                                        <div class="botones">
+                                            <input id="reset" name="reset" type="reset" class="btn btn-secundary" value="Limpiar">
+                                            <input id="submit" name="submit" type="submit" class="btn btn-secundary" value="Enviar">
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- Fin -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="section footer-minimal context-dark">
+            <div class="container">
+                <div style="visibility: visible; animation-name: fadeIn;">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="index.html" class="navbar-brand text-uppercase font-weight-bold">PetLand</a>
+                        </div>
+                        <ul class="footer-minimal-nav" id="list-footer">
+                            <li><a href="#">Nosotros</a></li><span>&nbsp;|&nbsp;</span>
+                            <li><a href="#">Colaboradores</a></li><span>&nbsp;|&nbsp;</span>
+                            <li><a href="#">Productos</a></li><span>&nbsp;|&nbsp;</span>
+                            <li><a href="#">Contáctanos</a></li><span>&nbsp;|&nbsp;</span>
+                        </ul>
+                        <ul class="social-links">
+                            <li><img src="https://cdn.icon-icons.com/icons2/1/PNG/256/social_facebook_fb_35.png" height="40px" alt="Facebook"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/instagram_black_logo_icon_147122.png" height="40px" alt="Instagram"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="https://cdn.icon-icons.com/icons2/1/PNG/128/social_Twitter_38.png" height="40px" alt="Twitter"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="https://cdn.icon-icons.com/icons2/693/PNG/128/Youtube_Rounded_Solid_icon-icons.com_61558.png" height="50px" alt="Youtube"></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="rights">
+                    <span>©&nbsp;</span>
+                    <span class="copyright-year">2021</span>
+                    <span>.&nbsp;</span>
+                </p>
+            </div>
+        </footer>
+    </div>
+    </body>
+</html>

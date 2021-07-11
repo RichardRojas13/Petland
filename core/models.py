@@ -33,3 +33,24 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.idRutCli
+
+# M para Usuarios que Donan o se hayan Suscrito
+class Suscrito(models.Model):
+    idSuscripcion = models.AutoField(primary_key=True, verbose_name="Identificador de la Suscripción")
+    nombreUser = models.CharField(unique=True, max_length=30, verbose_name="Nombre de usuario", help_text="Introduzca el nombre de usuario")
+    fechaSuscripcion = models.DateTimeField(auto_now_add=True, verbose_name="Fecha en la que el usuario se suscribió")
+
+    def __str__(self):
+        return self.idSuscripcion
+
+# M para Clientes Registrados
+class Usuario(models.Model):
+    idUser = models.AutoField(primary_key=True, verbose_name="Identificador del Usuario")
+    nombreUser = models.CharField(unique=True, max_length=30, verbose_name="Nombre de usuario", help_text="Introduzca el nombre de usuario")
+    passwordUser = models.CharField(max_length=10, verbose_name="Contraseña", help_text="Introduzca la contraseña")
+    idRutCli = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name="Número Rut sin dígito verificador")
+
+    def __str__(self):
+        return self.nombreUser    
+
+
