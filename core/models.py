@@ -53,4 +53,11 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nombreUser    
 
+# M para Categoria de Productos
+class Categoria(models.Model):
+    idCategoria = models.AutoField(primary_key=True, verbose_name="Identificador del Producto")
+    nombreCategoria = models.CharField(max_length=70, verbose_name="Nombre Categoría", help_text="Introduzca el tipo de Categoría")
+
+    def __str__(self):
+        return self.nombreCategoria
 

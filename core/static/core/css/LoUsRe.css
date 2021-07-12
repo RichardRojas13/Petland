@@ -10,9 +10,6 @@ html, body {
     left: 0;
     top: 0;
     width: 100%;
-    /* background: linear-gradient(to bottom, rgba(131, 151, 180, 0.568), rgba(128, 167, 173, 0.507), rgba(80, 107, 117, 0.582)), url(https://i.pinimg.com/236x/e6/d2/0e/e6d20ec7d8e65e6eedfd36908a71fc3f.jpg); */
-    /* background: rgb(122, 189, 190);
-    background: linear-gradient(135deg, rgb(99, 155, 177) 23%, rgb(224, 205, 95) 100%);  */
     background: -webkit-linear-gradient(75deg, rgba(172, 144, 209, 0.973) 20%, rgba(192, 163, 108, 0.89) 80%);
     background: -moz-linear-gradient(75deg, rgba(172, 144, 209, 0.973) 20%, rgba(192, 163, 108, 0.89) 80%);
     background: -ms-linear-gradient(75deg, rgba(172, 144, 209, 0.973) 20%, rgba(192, 163, 108, 0.89) 80%);

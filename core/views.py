@@ -1,16 +1,13 @@
 from django.shortcuts import redirect, render
-from .models import Producto, Venta, Cliente
-# Create your views here.
+from .models import Producto, Usuario, Venta, Cliente, Suscrito
 
-# Create your views here.
 def index(request):
     return render(request,'core/index.html')
 
-# Login de usuarios previamente registrados
+
 def LoUsRe(request):
     return render(request,'core/LoUsRe.html')
 
-# Validación: Existe el usuario en la BD
 def verificacionUser (request):
     if request.method == 'POST':
         username = request.POST['usernmaneCli']
@@ -20,7 +17,7 @@ def verificacionUser (request):
 
     return redirect('index.html')
 
-# Registro de nuevos Usuarios
+
 def registroUser (request):
     if request.method == 'POST':
         numRut = request.POST['nroRutCli']
@@ -30,11 +27,30 @@ def registroUser (request):
         nombreUser = request.POST['nombreUser']
         passwordUser = request.POST['passwordUser']
 
-        # 1. Agregando datos a la taba Cliente
         Cliente.objects.create(idRutCli=numRut, dvRun=dvRut, nombreCli=nombres, apellidocli=apellidos)
-
-        # 2.- Agregando datos a la tabla Usuario
+ 
         selCliente = Cliente.objects.get(idRutCli=numRut)
         Usuario.objects.create(nombreUser=nombreUser, passwordUser=passwordUser, idRutCli=selCliente)
 
     return redirect('index.html')
+
+
+def donarSuscripcion (request):
+    return render(request,'core/donarSuscripcion.html')
+
+class userObtenido:
+            def __init__(self, nombre, edad):
+                self.nombre = nombre
+                self.edad = edad
+                super().__init__()
+
+
+def obtenerUser (request):
+    nombreUser = userObtenido("Usuario", "16")
+    contexto = {"nombreUser": nombreUser}
+    return render(request, 'core/index.html', contexto)
+
+
+def cerrarSesión (request):
+    messages = print("Your form was saved") 
+    return redirect('LoUsRe.html')
