@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>PetLand</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+        {% load static %}
+        <!-- Call CSS -->
+        <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'core/style/listadoCompras.css' %}">
+        <!-- Call JS -->
+        <script type="text/javascript" src = {% static "core/js/bootstrap.min.js" %}> </script>
+        <!--<script src = {% static "core/js/index.js" %}> </script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <script>
+        $(function () {
+            $(window).on('scroll', function () {
+                if ( $(window).scrollTop() > 10 ) {
+                    $('.navbar').addClass('active');
+                } else {
+                    $('.navbar').removeClass('active');
+                }
+            });
+        });
+    </script>
+    <body>
+        <!-- Barra de menú y Bienvenida -->
+        <div class="back-menu">
+            <header class="header">
+                <nav class="navbar navbar-expand-lg fixed-top py-0">
+                    <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">PetLand</a>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active"><a href="{% url 'index.html' %}" class="nav-link text-uppercase font-weight-bold">Inicio</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Nuestra Tienda</a></li>
+                                <li class="nav-item"><a href="{% url 'doSuscripcion.html' %}" class="nav-link text-uppercase font-weight-bold btn btn-info" type="button" id="suscripcion">Donar</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Productos</a></li>
+                                    <ul class="sub-menu">
+                                        <li><a href="" style="margin-bottom:-5px;margin-left:-30px;font-size:15px;" class="sub-item">Historial de Compras</a></li>
+                                        <li><a href="" style="margin-bottom:-10px;margin-left:-30px;font-size:15px;padding-bottom: 25px;" class="sub-item">Historial de Donaciones</a></li>
+                                    </ul>    
+                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Galería</a></li>
+                                <li class="nav-item"><a href="{% url 'cerrarSesión' %}" class="nav-link text-uppercase font-weight-bold btn btn-info" type="button" id="cerrarSesion">Cerrar Sesion</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- Sección: Welcome -->
+            <div class="main-bunner" id="welcome">
+                <div class="main-bunner-inner">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="bunner-content-modern text-center">
+                                <h1 class="text-uppercase" id="Bienvenidos">Bienvenidos</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Barra de menú y Bienvenida -->
+        
+        <!-- Sección: Listado de productos a comprar -->
+        <h3>Hola, {{selProducto.idProducto}}</h3>
+
+
+        <!-- Footer -->
+        <footer class="section footer-minimal context-dark">
+            <div class="container">
+                <div style="visibility: visible; animation-name: fadeIn;">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="{% url 'index.html' %}" class="navbar-brand text-uppercase font-weight-bold">PetLand</a>
+                        </div>
+                        <ul class="footer-minimal-nav" id="list-footer">
+                            <li><a href="#">Nosotros</a></li><span>&nbsp;|&nbsp;</span>
+                            <li><a href="#">Colaboradores</a></li><span>&nbsp;|&nbsp;</span>
+                            <li><a href="#">Productos</a></li><span>&nbsp;|&nbsp;</span>
+                            <li><a href="#">Contáctanos</a></li><span>&nbsp;|&nbsp;</span>
+                        </ul>
+                        <ul class="social-links">
+                            <li><img src="https://cdn.icon-icons.com/icons2/1/PNG/256/social_facebook_fb_35.png" height="40px" alt="Facebook"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/instagram_black_logo_icon_147122.png" height="40px" alt="Instagram"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="https://cdn.icon-icons.com/icons2/1/PNG/128/social_Twitter_38.png" height="40px" alt="Twitter"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="https://cdn.icon-icons.com/icons2/693/PNG/128/Youtube_Rounded_Solid_icon-icons.com_61558.png" height="50px" alt="Youtube"></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="rights">
+                    <span>©&nbsp;</span>
+                    <span class="copyright-year">PetLand</span>
+                    <span>.&nbsp;</span>
+                </p>
+            </div>
+        </footer>
+        <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;">
+            <span>&#8593;</span>
+        </a>
+    </body>
+</html>

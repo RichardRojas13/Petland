@@ -1,5 +1,5 @@
 from django.urls import path 
-from .views import index, LoUsRe, registroUser, verificacionUser, doSuscripcion, cerrarSesion, suscripcionUsuario, desSuscripcion
+from .views import index, LoUsRe, registroUser,formAddClientes, addClientes, verificacionUser, doSuscripcion, cerrarSesion, suscripcionUsuario, desSuscripcion, mantenedorClientes,  formUpdClientes, updClientes, listadoCompras, obtenerDatosCompraProducto
 
 urlpatterns = [
     path('', LoUsRe, name="LoUsRe.html"),
@@ -9,5 +9,12 @@ urlpatterns = [
     path('index/doSuscripcion/', doSuscripcion, name="donarSuscripcion.html"),
     path('suscripcionUsuario', suscripcionUsuario, name="suscripcionUsuario"),
     path('desSuscripcion', desSuscripcion, name="desSuscripcion"),
-    path('cerrarSesión', cerrarSesion, name="cerrarSesión"),
+    path('cerrarSesion', cerrarSesion, name="cerrarSesion"),
+    path('listadoCompras/', listadoCompras, name="listadoCompras.html"),
+    path('obtenerDatosCompraProducto', obtenerDatosCompraProducto, name="obtenerDatosCompraProducto"),
+    path('mantenedorClientes/', mantenedorClientes, name="mantenedorClientes.html"),
+    path('formAddClientes/', formAddClientes, name="formAddClientes.html"),
+    path('addClientes', addClientes, name="addClientes"),
+    path('formUpdClientes', formUpdClientes, name="formUpdClientes.html"),
+    path('updClientes', updClientes, name="updClientes"),
 ]

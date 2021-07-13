@@ -54,3 +54,81 @@ def obtenerUser (request):
 def cerrarSesión (request):
     messages = print("Your form was saved") 
     return redirect('LoUsRe.html')
+
+def suscripcionUsuario (request):
+    if request.method == 'POST':
+        montoDonacion = request.POST['montoDonacion']
+        nombreUser = request.POST['nombreUser']
+
+        selUsuario = Usuario.objects.get(nombreUser=nombreUser)
+
+        Suscrito.objects.create(nombreUser=selUsuario)
+
+    return redirect('index.html')
+
+def desSuscripcion (request):
+    if request.method == 'POST':
+        nombreUser = request.POST['nombreUser']
+
+        selUsuario = Suscrito.objects.get(nombreUser=nombreUser)
+
+        
+        Suscrito.objects.filter(nombreUser=selUsuario).delete()
+
+    return redirect('index.html')
+
+
+def listadoCompras (request):
+    return render(request,'core/listadoCompras.html')
+
+
+def obtenerDatosCompraProducto (request):
+    if request.method == 'POST':
+        idProducto = request.POST['idProducto']
+
+        selProducto = Producto.objects.get(idProducto=idProducto)
+        
+        datosObtenidos = {
+            'selProducto' : selProducto
+        }
+
+    return render(request, 'core/listadoCompras.html', datosObtenidos)
+
+
+def mantenedorClientes (request):
+    clientes = Cliente.objects.order_by("idRutCli", "nombreCli")
+    clientesObtenidos = {
+        'clientes': clientes
+    }
+
+    return render(request, 'core/mantenedorClientes.html', clientesObtenidos)
+
+def formAddClientes (request):
+    return render(request, 'core/formAddClientes.html')
+
+def addClientes (request):
+    if request.method == 'POST':
+        nroRutCli = request.POST['idRutCli']
+        dvRun = request.POST['dvRun']
+        nombreCli = request.POST['nombreCli']
+        apellidocli = request.POST['apellidocli']
+
+
+        Cliente.objects.create(idRutCli=nroRutCli,dvRun=dvRun,nombreCli=nombreCli,apellidocli=apellidocli)
+
+    return redirect('mantenedorClientes.html')
+
+def formUpdClientes (request):
+    return render(request, 'core/formUpdClientes.html')
+
+def updClientes (request):
+    if request.method == 'POST':
+        nroRutCli = request.POST['idRutCli']
+        nombreCli = request.POST['nombreCli']
+        apellidocli = request.POST['apellidocli']
+        
+        selCliente = Cliente.objects.get(idRutCli=nroRutCli)
+
+        Cliente.objects.filter(idRutCli=nroRutCli).update(nombreCli=nombreCli, apellidocli=apellidocli)
+
+    return redirect('mantenedorClientes.html')    
