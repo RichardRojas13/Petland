@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>PetLand</title>
+        <title>Petland</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
         <!-- Call JS -->
         <script src = {% static "core/js/bootstrap.min.js" %}> </script>
+        <!--<script src = {% static "core/js/index.js" %}> </script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
@@ -27,28 +28,28 @@
         });
     </script>
     <body>
-        <!-- Barra menu -->
-        <div class="back-menu"  >
+        <div class="back-menu">
             <header class="header">
                 <nav class="navbar navbar-expand-lg fixed-top py-0">
                     <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">PetLand</a>
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active" style="margin-left: 150px"><a href="{% url 'index.html' %}" class="nav-link text-uppercase font-weight-bold">Inicio</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Nosotros</a></li>
+                                <li class="nav-item active"><a href="{% url 'index.html' %}" class="nav-link text-uppercase font-weight-bold">Inicio</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Nuestra Tienda</a></li>
+                                <li class="nav-item"><a href="{% url 'doSuscripcion.html' %}" class="nav-link text-uppercase font-weight-bold btn btn-info" type="button" id="suscripcion">Donar</a></li>
                                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Productos</a></li>    
                                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Galería</a></li>
-                                <li class="nav-item"><a href="" class="nav-link text-uppercase font-weight-bold btn btn-info" type="button" id="suscripcion">Suscribirme</a></li>
+                                <li class="nav-item"><a href="{% url 'cerrarSesión' %}" class="nav-link text-uppercase font-weight-bold btn btn-info" type="button" id="cerrarSesion">Cerrar Sesion</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
-            <!-- Bienvenidos -->
+
             <div class="main-bunner" id="Bienvenidos">
                 <div class="main-bunner-inner">
-                    <div class="row row-50 justify-content-lg-center align-items-lg-center">
-                        <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="bunner-content-modern text-center">
                                 <h1 class="text-uppercase" id="welcome">Bienvenidos</h1>
                             </div>
@@ -64,27 +65,12 @@
                     <div class="container">
                         <div id="elementor-opciones">
                             <div class="row">
-                                <!-- Perros -->
-                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                    <div id="info-perros">
-                                        <div class="container-fluid">
-                                            <div class="box-icon">
-                                                <img src="https://www.bing.com/images/blob?bcid=Tu3kJTmcyfYCng" height="110px" alt="Perros">
-                                            </div>
-                                            <div>
-                                                <h3 class="box-title">
-                                                    <a href="#">PERROS</a>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- Gatos -->
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div id="info-gatos">
                                         <div class="container-fluid">
                                             <div class="box-icon">
-                                                <img src="https://i.pinimg.com/236x/c7/73/f2/c773f227d686e91701c384b60bdc42f7.jpg" height="110px" alt="Gatos">
+                                                <img src="https://static.vecteezy.com/system/resources/previews/000/621/594/non_2x/cat-flat-logo-vector.jpg" height="110px" alt="Gatos">
                                             </div>
                                             <div>
                                                 <h3 class="box-title">
@@ -94,16 +80,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Animalitos -->
+                                 <!-- Perros -->
+                                 <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div id="info-perros">
+                                        <div class="container-fluid">
+                                            <div class="box-icon">
+                                                <img src="https://st3.depositphotos.com/4265001/14374/v/600/depositphotos_143741745-stock-illustration-dog-logo-illustration.jpg" height="110px" alt="Perros">
+                                            </div>
+                                            <div>
+                                                <h3 class="box-title">
+                                                    <a href="#">PERROS</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
                                     <div id="info-peque">
                                         <div class="container-fluid">
                                             <div class="box-icon">
-                                                <img src="https://th.bing.com/th/id/OIP.950a4UX7YJl_FOi01nMC4QAAAA?pid=ImgDet&rs=1" height="110px" alt="Gatos">
+                                                <img src="https://i.pinimg.com/originals/d9/58/ee/d958ee0c794c15ab4b280b83a2711851.jpg" height="110px" alt="Gatos">
                                             </div>
                                             <div>
                                                 <h3 class="box-title">
-                                                    <a href="#">ANIMALES PEQUEÑOS</a>
+                                                    <a href="#">ANIMALITOS</a>
                                                 </h3>
                                             </div>
                                         </div>
@@ -115,88 +115,59 @@
                 </section>
             </div>
         </div>
-
-        <div class="back-contenido2">
-            <div class="">
-                <section>
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <div class="container-fluid serv-extras">
-                                <h2>Nuestros Servicios</h2>
-                                <p>Nuestra Pagina Web cuenta con un servicio simple y comodo para que pueda ser ocupado por todas las edades</p>
-                                <!-- Servicio -->
-                                <a href="#"><button type="button" class="btn btn">Entérate más aquí</button></a>
-                            </div>
-                        </div>
-                        <!-- Contact-->
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <div class="container-fluid contacto">
-                                <h2>Contáctanos</h2>
-                                <!-- Formulario Contacto -->
-                                <form class="form-horizontal" id="contacto" name="contacto" action="" method="post">
-                                    <div class="row" id="campos">
-                                        <div class="col-md-11 col-sm-11 col-xs-11">
-                                            <label for="name" class="control-label col-xs-2">Su Nombre completo</label>
-                                            <input id="name" name="name" type="text" placeholder="Nombre(s) y Apellidos" class="form-control" minlength="7" required>
-                                        </div>
-                                        <br><br><br>
-                                        <div class="col-md-11 col-sm-11 col-xs-11">
-                                            <label for="email" class="control-label col-xs-2">Correo electronico</label>
-                                            <input id="email" name="email" type="email" placeholder="Email" class="form-control" required>
-                                        </div>
-                                        <br><br><br>
-                                        <div class="col-md-11 col-sm-11 col-xs-11">
-                                            <label for="phone" class="control-label col-xs-2">Teléfono</label>
-                                            <input id="phone" name="phone" type="number" placeholder="987 654 321" class="form-control" minlength="9">
-                                        </div>
-                                        <br><br><br>
-                                        <div class="col-md-11 col-sm-11 col-xs-11">
-                                            <label for="message" class="control-label col-xs-2">Asunto</label>
-                                            <textarea class="form-control" id="message" name="message" placeholder="Introduzca su mensaje para nosotros aquí." rows="5" required></textarea>
-                                        </div>
-                                        <br><br>
-                                        <div class="botones">
-                                            <input id="reset" name="reset" type="reset" class="btn btn-secundary" value="Limpiar">
-                                            <input id="submit" name="submit" type="submit" class="btn btn-secundary" value="Enviar">
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- Fin -->
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="back-produc-venta">
+            <div>
+                <h3 id="title-prod">Productos Disponibles</h3>
+                <span class="line margin-bottom-0"></span>
             </div>
+            <div class="listar-productos">
+                <div class="row" id="border-row">
+                    {% for i in productos %}
+                        <div class="col-4" id="border-col">
+                            <a href="#">
+                                <section class="mostrarInfo">
+                                    <span class="product-categoria">{{i.idCategoria}}</span><br>
+                                    <span class="product-nombre">{{i.nombreProducto}}</span><br>
+                                    <span class="product-precio">${{i.precioUnidad}}</span><br>
+                                    <a href=""><button type="submit" class="btn btn-primary" id="agregarProducto" name="agregarProducto" value="agregarProducto">Comprar</button></a>
+                                </section>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+		    </div>
         </div>
-
         <footer class="section footer-minimal context-dark">
             <div class="container">
                 <div style="visibility: visible; animation-name: fadeIn;">
                     <div class="row">
                         <div class="col-12">
-                            <a href="index.html" class="navbar-brand text-uppercase font-weight-bold">PetLand</a>
+                            <a href="{% url 'index.html' %}" class="navbar-brand text-uppercase font-weight-bold">PetLand</a>
                         </div>
                         <ul class="footer-minimal-nav" id="list-footer">
-                            <li><a href="#">Nosotros</a></li><span>&nbsp;|&nbsp;</span>
-                            <li><a href="#">Colaboradores</a></li><span>&nbsp;|&nbsp;</span>
+                            <li><a href="#">Nuestra Tienda</a></li><span>&nbsp;|&nbsp;</span>
                             <li><a href="#">Productos</a></li><span>&nbsp;|&nbsp;</span>
                             <li><a href="#">Contáctanos</a></li><span>&nbsp;|&nbsp;</span>
                         </ul>
                         <ul class="social-links">
-                            <li><img src="https://cdn.icon-icons.com/icons2/1/PNG/256/social_facebook_fb_35.png" height="40px" alt="Facebook"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <li><img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/instagram_black_logo_icon_147122.png" height="40px" alt="Instagram"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <li><img src="https://cdn.icon-icons.com/icons2/1/PNG/128/social_Twitter_38.png" height="40px" alt="Twitter"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            <li><img src="https://cdn.icon-icons.com/icons2/693/PNG/128/Youtube_Rounded_Solid_icon-icons.com_61558.png" height="50px" alt="Youtube"></li>
+                            <li><img src="data:image/png;base64,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" height="40px" alt="Twitter"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>                           
+                            <li><img src="data:image/png;base64,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" height="40px" alt="Instagram"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="data:image/png;base64,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" height="40px" alt="Facebook"></li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <li><img src="https://images.vexels.com/media/users/3/137425/isolated/lists/f2ea1ded4d037633f687ee389a571086-logotipo-del-icono-de-youtube.png" height="50px" alt="Youtube"></li>
                         </ul>
                     </div>
                 </div>
                 <p class="rights">
                     <span>©&nbsp;</span>
-                    <span class="copyright-year">2021</span>
+                    <span class="copyright-year">PetLand</span>
                     <span>.&nbsp;</span>
                 </p>
             </div>
         </footer>
-    </div>
+
+
+        <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;">
+            <span>&#8593;</span>
+        </a>
     </body>
 </html>
